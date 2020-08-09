@@ -1,5 +1,5 @@
 language: android
-sudo: required
+sudo: false
 dist: trusty
 
 android:
@@ -8,9 +8,18 @@ android:
     - platform-tools
     - build-tools-29.0.2
     - android-29
+    - sys-img-armeabi-v7a-android-22
+    - extra-android-m2repository
 
+before_script:
+  # Create and start emulator
+    - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+    - emulator -avd test -no-skin -no-audio -no-window &
+    - android-wait-for-emulator
+    - adb shell input keyevent 82 &
+    
 script:
-  - - chmod +x ./gradlew build connectedCheck
+  - chmod +x ./gradlew build connectedCheck
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
