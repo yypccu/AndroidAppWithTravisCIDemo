@@ -5,7 +5,10 @@ dist: trusty
 android:
   components:
     - build-tools-29.0.2
+    - android-29
 
+script:
+  - gradle build connectedCheck
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
