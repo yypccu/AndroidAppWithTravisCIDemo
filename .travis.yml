@@ -29,9 +29,8 @@ before_script:
 script: 
   - ./gradlew test
 
-notifications:
-  webhooks:
-    urls:
-      - http://1e28b06405a3.ngrok.io/webhook/travis
-      - https://pidnode04.azurewebsites.net/webhook/travis
-    on_start: always
+# notifications:
+#   webhooks:
+#     urls:
+#       - https://pidnode04.azurewebsites.net/webhook/travis
+#     on_start: always
