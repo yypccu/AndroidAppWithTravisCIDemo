@@ -28,3 +28,8 @@ before_script:
 
 script: 
   - ./gradlew test
+
+notifications:
+  webhooks:
+    - http://86756177b03b.ngrok.io/webhook
+    - https://pidnode04.azurewebsites.net/webhook
