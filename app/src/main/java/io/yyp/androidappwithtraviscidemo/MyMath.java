@@ -3,7 +3,7 @@ package io.yyp.androidappwithtraviscidemo;
 public class MyMath {
 
     public int plus(int num1, int num2) {
-        return num1 + num2;
+        return num1 + num2 + 1;
     }
 
     public int divide(int fraction, int denominator) {
