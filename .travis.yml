@@ -31,5 +31,7 @@ script:
 
 notifications:
   webhooks:
-    - http://86756177b03b.ngrok.io/webhook
-    - https://pidnode04.azurewebsites.net/webhook
+    urls:
+      - http://86756177b03b.ngrok.io/webhook
+      - https://pidnode04.azurewebsites.net/webhook
+    on_start: always
